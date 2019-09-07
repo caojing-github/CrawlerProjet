@@ -81,7 +81,7 @@ public class JDCrawler {
                 String itemHtml = httpClientUtils.getContent(url);
                 String title = Jsoup.parse(itemHtml).select("div.sku-name").text();
 
-                //获取商品价格
+                //获取商品价格（京东提供的免费查询商品价格的api接口）
                 String priceUrl = "https://p.3.cn/prices/mgets?skuIds=J_" + skuId;
                 String priceJson = httpClientUtils.getContent(priceUrl);
                 //解析json数据获取商品价格
